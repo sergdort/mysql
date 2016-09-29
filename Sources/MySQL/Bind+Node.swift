@@ -40,7 +40,7 @@ extension Bind {
         if isNull == 1 {
             return .null
         } else {
-            #if !NOJSON
+            #if !os(Linux)
                 if variant == MYSQL_TYPE_JSON {
                     let buffer = UnsafeMutableBufferPointer(
                         start: cast(buffer, UInt8.self),
