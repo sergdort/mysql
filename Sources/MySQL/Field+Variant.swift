@@ -22,7 +22,7 @@ extension Field.Variant: CustomStringConvertible {
         of the Field variant.
     */
     public var description: String {
-        #if !NOJSON
+        #if !os(Linux)
             if self == MYSQL_TYPE_JSON {
                 return "JSON field"
             }
